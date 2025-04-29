@@ -7,31 +7,31 @@ def index():
     return render_template("index.html")
 
 @app.route("/about")
-def index():
+def about():
     return render_template("about.html")
 
 @app.route("/basket")
-def index():
+def basket():
     return render_template("basket.html")
 
 @app.route("/checkout")
-def index():
+def checkout():
     return render_template("checkout.html")
 
 @app.route("/faq")
-def index():
+def faq():
     return render_template("faq.html")
 
 @app.route("/loggedOut")
-def index():
+def logged_out():
     return render_template("loggedOut.html")
 
 @app.route("/login")
-def index():
+def login():
     return render_template("loggedOut.html")
 
 @app.route("/register")
-def index():
+def register():
     return render_template("register.html")
 
 if __name__ == '__main__':
