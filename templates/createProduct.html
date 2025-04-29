@@ -2,20 +2,20 @@
 {% block title %}Create Product{% endblock %}
 {% block content %}
 
-<form>
+<form method="POST" action="/submit_product">
     <div class="mb-3">
         <label for="productName" class="form-label">Product Name</label>
-        <input type="email" class="form-control" id="productName" aria-describedby="productName">
+        <input type="text" class="form-control" name="productName" id="productName" aria-describedby="productName">
     </div>
 
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <input type="email" class="form-control" id="description" aria-describedby="description">
+        <input type="text" class="form-control" name="description" id="description" aria-describedby="description">
     </div>
 
     <div class="mb-3">
         <label for="price" class="form-label">Price</label>
-        <input type="email" class="form-control" id="price" aria-describedby="price">
+        <input type="text" class="form-control" name="price" id="price" aria-describedby="price">
     </div>
     
     <button type="submit" class="btn btn-primary">Create Product</button>

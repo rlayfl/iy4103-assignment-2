@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+
 
 app = Flask(__name__)
 
@@ -84,6 +85,19 @@ class Login(db.Model):
     username = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(150), nullable=False)
 
+# CRUD Methods
+
+@app.route("/submit_product", methods=["POST"])
+def submit_product():
+    name = request.form.get("productName")
+    price = request.form.get("price")
+    description = request.form.get("description")
+
+    new_product = Product(name=name, price=price, description=description)
+    db.session.add(new_product)
+    db.session.commit()
+
+    return redirect(url_for('products'))
 
 if __name__ == '__main__':
     app.run(debug = True)
