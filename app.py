@@ -22,7 +22,7 @@ def checkout():
 def faq():
     return render_template("faq.html")
 
-@app.route("/loggedOut")
+@app.route("/loggedout")
 def logged_out():
     return render_template("loggedOut.html")
 
